@@ -38,15 +38,15 @@ services:
       # allow running it locally
       - traefik.http.middlewares.https-redirect.contenttype.autodetect=false
 
-  db:
-    restart: "no"
-    ports:
-      - "5432:5432"
+  # db:
+  #   restart: "no"
+  #   ports:
+  #     - "5432:5432"
 
-  adminer:
-    restart: "no"
-    ports:
-      - "8080:8080"
+  # adminer:
+  #   restart: "no"
+  #   ports:
+  #     - "8080:8080"
 
   backend:
     restart: "no"
@@ -61,18 +61,18 @@ services:
     # command: sleep infinity  # Infinite loop to keep container alive doing nothing
     command: /start-reload.sh
 
-  backend-content:
-    restart: "no"
-    ports:
-      - "8899:8899"
-    volumes:
-      - ./backend-content/:/app
-    build:
-      context: ./backend-content
-      args:
-        INSTALL_DEV: ${INSTALL_DEV-true}
-    # command: sleep infinity  # Infinite loop to keep container alive doing nothing
-    command: /start-reload.sh
+  # backend-content:
+  #   restart: "no"
+  #   ports:
+  #     - "8899:8899"
+  #   volumes:
+  #     - ./backend-content/:/app
+  #   build:
+  #     context: ./backend-content
+  #     args:
+  #       INSTALL_DEV: ${INSTALL_DEV-true}
+  #   # command: sleep infinity  # Infinite loop to keep container alive doing nothing
+  #   command: /start-reload.sh
 
   frontend:
     restart: "no"
