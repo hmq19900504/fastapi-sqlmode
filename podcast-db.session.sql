@@ -1,4 +1,4 @@
--- create database app;
+create database content;
 
 -- create DATABASE app;
 

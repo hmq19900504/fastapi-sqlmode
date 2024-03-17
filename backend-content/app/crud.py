@@ -1,5 +1,5 @@
 from typing import Any
-from sqlmodel import Session, select
+from sqlmodel import Session
 
 
 # def create_user(*, session: Session, user_create: UserCreate) -> User:
