@@ -125,10 +125,10 @@ services:
 
         - traefik.http.services.${STACK_NAME?Variable not set}-backend-content.loadbalancer.server.port=80
 
-        - traefik.http.routers.${STACK_NAME?Variable not set}-backend-content-http.rule=Host(`${DOMAIN?Variable not set}`, `www.${DOMAIN?Variable not set}`) && PathPrefix(`/content/api`, `/content/docs`, `/content/redoc`)
+        - traefik.http.routers.${STACK_NAME?Variable not set}-backend-content-http.rule=Host(`${DOMAIN?Variable not set}`, `www.${DOMAIN?Variable not set}`) && PathPrefix(`/api/content`, `/docs/content`, `/redoc/content`)
         - traefik.http.routers.${STACK_NAME?Variable not set}-backend-content-http.entrypoints=http
 
-        - traefik.http.routers.${STACK_NAME?Variable not set}-backend-content-https.rule=Host(`${DOMAIN?Variable not set}`, `www.${DOMAIN?Variable not set}`) && PathPrefix(`/content/api`, `/content/docs`, `/content/redoc`)
+        - traefik.http.routers.${STACK_NAME?Variable not set}-backend-content-https.rule=Host(`${DOMAIN?Variable not set}`, `www.${DOMAIN?Variable not set}`) && PathPrefix(`/api/content`, `/docs/content`, `/redoc/content`)
         - traefik.http.routers.${STACK_NAME?Variable not set}-backend-content-https.entrypoints=https
         - traefik.http.routers.${STACK_NAME?Variable not set}-backend-content-https.tls=true
         - traefik.http.routers.${STACK_NAME?Variable not set}-backend-content-https.tls.certresolver=le
